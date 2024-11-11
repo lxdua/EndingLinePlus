@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgpt246vb6uwl"]
+[gd_scene load_steps=4 format=3 uid="uid://bgpt246vb6uwl"]
 
 [ext_resource type="PackedScene" uid="uid://crpcxiiawao8a" path="res://Scene/MapScene/RoadOnMap/road_on_map.tscn" id="1_5mp08"]
 [ext_resource type="Script" path="res://Scene/MapScene/map_node.gd" id="1_8xnda"]
-[ext_resource type="Script" path="res://Scene/MapScene/RoadOnMap/road_on_map.gd" id="2_poj6o"]
 [ext_resource type="PackedScene" uid="uid://dh5pg1atr6btw" path="res://Scene/MapScene/StationOnMap/station_on_map.tscn" id="3_20rsb"]
-[ext_resource type="Script" path="res://Scene/MapScene/StationOnMap/station_on_map.gd" id="4_pfd1u"]
 
 [node name="MapNode" type="Node2D" node_paths=PackedStringArray("road_root", "station_root")]
 script = ExtResource("1_8xnda")
@@ -13,34 +11,24 @@ station_root = NodePath("StationRoot")
 
 [node name="RoadRoot" type="Node2D" parent="."]
 
-[node name="R0" type="Node2D" parent="RoadRoot" node_paths=PackedStringArray("road_line", "station_u", "station_v") instance=ExtResource("1_5mp08")]
-script = ExtResource("2_poj6o")
-road_line = NodePath("RoadLine")
+[node name="R0" parent="RoadRoot" node_paths=PackedStringArray("station_u", "station_v") instance=ExtResource("1_5mp08")]
 station_u = NodePath("../../StationRoot/S1")
 station_v = NodePath("../../StationRoot/S2")
 
-[node name="R1" type="Node2D" parent="RoadRoot" node_paths=PackedStringArray("road_line", "station_u", "station_v") instance=ExtResource("1_5mp08")]
-script = ExtResource("2_poj6o")
-road_line = NodePath("RoadLine")
+[node name="R1" parent="RoadRoot" node_paths=PackedStringArray("station_u", "station_v") instance=ExtResource("1_5mp08")]
 id = 1
 station_u = NodePath("../../StationRoot/S0")
 station_v = NodePath("../../StationRoot/S1")
 
 [node name="StationRoot" type="Node2D" parent="."]
 
-[node name="S0" type="Node2D" parent="StationRoot" instance=ExtResource("3_20rsb")]
+[node name="S0" parent="StationRoot" instance=ExtResource("3_20rsb")]
 position = Vector2(-265, -336)
-scale = Vector2(4, 4)
-script = ExtResource("4_pfd1u")
 
-[node name="S1" type="Node2D" parent="StationRoot" instance=ExtResource("3_20rsb")]
+[node name="S1" parent="StationRoot" instance=ExtResource("3_20rsb")]
 position = Vector2(28, -43)
-scale = Vector2(4, 4)
-script = ExtResource("4_pfd1u")
 id = 1
 
-[node name="S2" type="Node2D" parent="StationRoot" instance=ExtResource("3_20rsb")]
+[node name="S2" parent="StationRoot" instance=ExtResource("3_20rsb")]
 position = Vector2(516, -213)
-scale = Vector2(4, 4)
-script = ExtResource("4_pfd1u")
 id = 2

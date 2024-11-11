@@ -8,6 +8,8 @@ class_name RoadOnMap
 @export var station_v: StationOnMap
 @export var length: float
 
+var can_pass: bool
+
 func expand_horizons(station: StationOnMap):
 	show()
 	if station == station_u:
@@ -21,4 +23,5 @@ func _ready() -> void:
 	road_line.clear_points()
 	road_line.add_point(station_u.global_position)
 	road_line.add_point(station_v.global_position)
+	length = (station_u.global_position - station_v.global_position).length()
 	hide()

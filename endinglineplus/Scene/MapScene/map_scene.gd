@@ -102,6 +102,7 @@ func drive():
 		print("无法到达！")
 		return
 	update_shortest_path(next_station_id, destination_id)
+	route_list = shortest_path
 	if is_driving:
 		print("更换目的地！")
 	elif destination_id == current_station_id:
@@ -118,7 +119,7 @@ func drive():
 			drive_tween.tween_property(
 				train_on_map,
 				"global_position",
-				map_node.get_station(next_station_id),
+				map_node.get_station(next_station_id).global_position,
 				matrix[current_station_id][next_station_id] / game_stats_manager.current_train_speed,
 				)
 			await drive_tween.finished

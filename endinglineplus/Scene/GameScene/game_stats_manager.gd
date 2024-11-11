@@ -5,7 +5,7 @@ enum GameMode { ESCAPE, BUILD }
 
 var game_mode: GameMode
 
-var current_train_speed: float
+var current_train_speed: float = 10.0
 
 
 func _ready() -> void:

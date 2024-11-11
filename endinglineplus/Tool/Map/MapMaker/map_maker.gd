@@ -58,10 +58,6 @@ var add_road: = func():
 	new_road.name = "R"+str(road_idx)
 	new_road.id = road_idx
 	road_idx += 1
-	if not new_road.station_u.adjacent_road_list.has(new_road):
-		new_road.station_u.adjacent_road_list.append(new_road)
-	if not new_road.station_v.adjacent_road_list.has(new_road):
-		new_road.station_v.adjacent_road_list.append(new_road)
 	prints("在", str(new_road.station_u), "和", str(new_road.station_v), "之间添加了道路")
 
 
@@ -94,7 +90,6 @@ var renumber_all: = func():
 		var road: = road_root.get_child(i)
 		var old_name: String = road.name
 		road.name = old_name[0]+str(i)
-
 
 func change_owner(new_owner: Node):
 	station_root.owner = new_owner
