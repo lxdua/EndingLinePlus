@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdew3rv4iugfe"]
+
+[ext_resource type="Script" path="res://Scene/StationScene/Building/building.gd" id="1_r6jiu"]
+[ext_resource type="Texture2D" uid="uid://cpadqrx8pshpd" path="res://icon.svg" id="2_28i78"]
+
+[node name="Building" type="Node3D"]
+script = ExtResource("1_r6jiu")
+
+[node name="BuildingSprite" type="Sprite3D" parent="."]
+texture = ExtResource("2_28i78")
+
+[node name="BuildingArea" type="Area3D" parent="."]
+
+[connection signal="input_event" from="BuildingArea" to="." method="_on_building_area_input_event"]
+[connection signal="mouse_entered" from="BuildingArea" to="." method="_on_building_area_mouse_entered"]
+[connection signal="mouse_exited" from="BuildingArea" to="." method="_on_building_area_mouse_exited"]

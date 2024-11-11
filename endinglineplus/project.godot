@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="EndingLinePlus"
+run/main_scene="res://Scene/GameScene/game_scene.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "pink",
+"res://Class/": "teal",
+"res://Resource/": "yellow",
+"res://Scene/": "blue",
+"res://Shader/": "purple",
+"res://Tool/": "gray"
+}
+
+[global_group]
+
+GameStatsManager="唯一游戏数据管理节点"
+FitmentManager="场景唯一节点"
+BuffManager="场景唯一节点"
+ModifierHandler="场景唯一节点"
+MapScene=""
+TimeManager=""
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_repeat=1

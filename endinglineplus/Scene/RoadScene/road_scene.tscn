@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://by2i5h22hjvld"]
+
+[ext_resource type="Script" path="res://Scene/RoadScene/road_scene.gd" id="1_5ujeh"]
+
+[node name="RoadScene" type="Node3D"]
+script = ExtResource("1_5ujeh")

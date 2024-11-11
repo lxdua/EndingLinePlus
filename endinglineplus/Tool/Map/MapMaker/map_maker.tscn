@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqh1y4frdbpeh"]
+
+[ext_resource type="Script" path="res://Tool/Map/MapMaker/map_maker.gd" id="1_8ortj"]
+[ext_resource type="Texture2D" uid="uid://cy7wku8wmmbs7" path="res://Assets/Art/MapScene/MapBG.png" id="2_6bumj"]
+[ext_resource type="Script" path="res://Scene/MapScene/map_node.gd" id="3_gme5d"]
+
+[node name="MapMaker" type="Node2D" node_paths=PackedStringArray("map_node", "road_root", "station_root", "marker")]
+script = ExtResource("1_8ortj")
+color = Color(0.137255, 0.2, 0.176471, 1)
+map_node = NodePath("MapNode")
+road_root = NodePath("MapNode/RoadRoot")
+station_root = NodePath("MapNode/StationRoot")
+marker = NodePath("车站添加点")
+scene_name = "地图2"
+station_v_id = 1
+
+[node name="MapBg" type="Sprite2D" parent="."]
+self_modulate = Color(0.588235, 0.588235, 0.588235, 1)
+texture = ExtResource("2_6bumj")
+
+[node name="MapNode" type="Node2D" parent="." node_paths=PackedStringArray("road_root", "station_root")]
+script = ExtResource("3_gme5d")
+road_root = NodePath("RoadRoot")
+station_root = NodePath("StationRoot")
+
+[node name="RoadRoot" type="Node2D" parent="MapNode"]
+
+[node name="StationRoot" type="Node2D" parent="MapNode"]
+
+[node name="车站添加点" type="Marker2D" parent="."]
+position = Vector2(-265, -336)
+gizmo_extents = 50.0

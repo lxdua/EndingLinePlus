@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://crpcxiiawao8a"]
+
+[ext_resource type="Script" path="res://Scene/MapScene/RoadOnMap/road_on_map.gd" id="1_twdxr"]
+
+[sub_resource type="Gradient" id="Gradient_ioavf"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.638655)
+colors = PackedColorArray(0.187568, 0.157464, 0.157476, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i5a2k"]
+gradient = SubResource("Gradient_ioavf")
+
+[node name="RoadOnMap" type="Node2D" node_paths=PackedStringArray("road_line")]
+script = ExtResource("1_twdxr")
+road_line = NodePath("RoadLine")
+
+[node name="RoadLine" type="Line2D" parent="."]
+width = 20.0
+texture = SubResource("GradientTexture2D_i5a2k")
+texture_mode = 1

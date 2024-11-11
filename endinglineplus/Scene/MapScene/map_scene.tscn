@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj24kn7idqb11"]
+
+[ext_resource type="Script" path="res://Scene/MapScene/map_scene.gd" id="1_gc1dx"]
+[ext_resource type="Texture2D" uid="uid://cy7wku8wmmbs7" path="res://Assets/Art/MapScene/MapBG.png" id="2_30bbn"]
+[ext_resource type="PackedScene" uid="uid://bgpt246vb6uwl" path="res://Resource/Map/地图2.tscn" id="3_obxyp"]
+[ext_resource type="PackedScene" uid="uid://d0p21ru34ipl2" path="res://Scene/MapScene/TrainOnMap/train_on_map.tscn" id="3_oncd3"]
+
+[node name="MapScene" type="Node2D" node_paths=PackedStringArray("train_on_map") groups=["MapScene"]]
+script = ExtResource("1_gc1dx")
+train_on_map = NodePath("TrainOnMap")
+map_pool = Array[PackedScene]([ExtResource("3_obxyp")])
+
+[node name="MapBg" type="Sprite2D" parent="."]
+self_modulate = Color(0.588235, 0.588235, 0.588235, 1)
+texture = ExtResource("2_30bbn")
+
+[node name="TrainOnMap" parent="." instance=ExtResource("3_oncd3")]
+z_index = 1
+
+[node name="Camera" type="Camera2D" parent="."]
+limit_left = -1250
+limit_top = -1250
+limit_right = 1250
+limit_bottom = 1250
+position_smoothing_enabled = true
