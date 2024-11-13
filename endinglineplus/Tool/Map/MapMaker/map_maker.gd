@@ -4,6 +4,7 @@ extends Node2D
 const STATION_ON_MAP = preload("res://Scene/MapScene/StationOnMap/station_on_map.tscn")
 const ROAD_ON_MAP = preload("res://Scene/MapScene/RoadOnMap/road_on_map.tscn")
 
+
 @export_subgroup("默认")
 @export_color_no_alpha var color: Color
 @export var map_node: MapNode

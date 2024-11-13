@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh5pg1atr6btw"]
 
 [ext_resource type="Script" path="res://Scene/MapScene/StationOnMap/station_on_map.gd" id="1_xw3p6"]
-[ext_resource type="Texture2D" uid="uid://b1uc8d7awdci5" path="res://Assets/Art/MapScene/Ruins.png" id="2_qtq1t"]
+[ext_resource type="Texture2D" uid="uid://b1uc8d7awdci5" path="res://Assets/Art/2D/MapScene/Ruins.png" id="2_qtq1t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8g3k"]
 atlas = ExtResource("2_qtq1t")

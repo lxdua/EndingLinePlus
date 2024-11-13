@@ -1,6 +1,9 @@
 extends Node2D
 class_name StationOnMap
 
+@export var station_pool: Array[String]
+var station_scene_name: String
+
 @export var id: int
 
 @onready var map_scene: = get_tree().get_first_node_in_group("MapScene")
@@ -25,3 +28,4 @@ func _on_station_texture_button_pressed() -> void:
 
 func _ready() -> void:
 	hide_self_and_road()
+	station_scene_name = station_pool.pick_random()

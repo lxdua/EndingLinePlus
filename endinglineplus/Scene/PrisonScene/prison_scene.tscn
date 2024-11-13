@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=4 uid="uid://bfcvbiotcj370"]
+
+[ext_resource type="Script" path="res://Scene/PrisonScene/prison_scene.gd" id="1_xywa3"]
+[ext_resource type="PackedScene" uid="uid://ddntya1832u8g" path="res://Scene/Interaction/interaction.tscn" id="2_0v1ll"]
+[ext_resource type="PackedScene" uid="uid://cvr3pj2lbmy6p" path="res://Scene/PlayerBody/player_body.tscn" id="3_0v1ll"]
+[ext_resource type="Texture2D" uid="uid://cpadqrx8pshpd" path="res://icon.svg" id="3_ecney"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecney"]
+sky_top_color = Color(0.211202, 0.514932, 0.686865, 1)
+sky_horizon_color = Color(0.602801, 0.670983, 0.704966, 1)
+ground_horizon_color = Color(0.602801, 0.670983, 0.704966, 1)
+
+[sub_resource type="Sky" id="Sky_amhj8"]
+sky_material = SubResource("ProceduralSkyMaterial_ecney")
+
+[sub_resource type="Environment" id="Environment_il1or"]
+background_mode = 2
+sky = SubResource("Sky_amhj8")
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ecney"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ecney"]
+data = PackedVector3Array(5, 0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, -5, 5, -0.5, 5, 5, 0.5, 5, 5, 0.5, 5, -5, 0.5, 5, -5, 0.5, -5, -5, 0.5, -5, 5, 0.5, -5, 5, 0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, -5, -0.5, 5, -5, 0.5, 5, 5, 0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, 5, -5, -0.5, -5, -5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, 5, -0.5, -5, 5, -0.5, -5, -5, -0.5, -5, -5, -0.5, 5, 5, -0.5, -5, 5, 0.5, -5, -5, 0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_amhj8"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_il1or"]
+_surfaces = [{
+"aabb": AABB(-5, -0.5, -5, 10, 1, 10),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAA"),
+"format": 34359738391,
+"material": SubResource("ORMMaterial3D_amhj8"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AACgQAAAAD8AAKBAAACgQAAAAD8AAKDAAACgQAAAAL8AAKDAAACgQAAAAL8AAKDAAACgQAAAAL8AAKBAAACgQAAAAD8AAKBAAACgQAAAAD8AAKBAAACgwAAAAD8AAKBAAACgwAAAAD8AAKDAAACgwAAAAD8AAKDAAACgQAAAAD8AAKDAAACgQAAAAD8AAKBAAACgQAAAAD8AAKBAAACgQAAAAL8AAKBAAACgwAAAAL8AAKBAAACgwAAAAL8AAKBAAACgwAAAAD8AAKBAAACgQAAAAD8AAKBAAACgwAAAAD8AAKDAAACgwAAAAD8AAKBAAACgwAAAAL8AAKBAAACgwAAAAL8AAKBAAACgwAAAAL8AAKDAAACgwAAAAD8AAKDAAACgwAAAAL8AAKBAAACgQAAAAL8AAKBAAACgQAAAAL8AAKDAAACgQAAAAL8AAKDAAACgwAAAAL8AAKDAAACgwAAAAL8AAKBAAACgQAAAAL8AAKDAAACgQAAAAD8AAKDAAACgwAAAAD8AAKDAAACgwAAAAD8AAKDAAACgwAAAAL8AAKDAAACgQAAAAL8AAKDA////f/9//n////9//3/+f////3//f/5/////f/9//n////9//3/+f////3//f/5//3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//3//fwAA/z//f/9/AAD/P/9//38AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8//////wAA/z//////AAD/P/////8AAP8/")
+}]
+
+[node name="PrisonScene" type="Node3D"]
+script = ExtResource("1_xywa3")
+game_scene = "res://Scene/GameScene/game_scene.tscn"
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_il1or")
+
+[node name="SetOutInteraction" parent="." instance=ExtResource("2_0v1ll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465471, 0.779116, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SetOutInteraction"]
+shape = SubResource("BoxShape3D_ecney")
+
+[node name="Sprite3D" type="Sprite3D" parent="SetOutInteraction"]
+texture = ExtResource("3_ecney")
+
+[node name="PlayerBody" parent="." instance=ExtResource("3_0v1ll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0685, 0.699674, 0)
+
+[node name="Camera3D" type="Camera3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47181, 0.987381)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ecney")
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("ArrayMesh_il1or")
+skeleton = NodePath("../..")
+
+[connection signal="interact_signal" from="SetOutInteraction" to="." method="_on_set_out_interaction_interact_signal"]

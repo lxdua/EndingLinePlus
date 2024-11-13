@@ -1,0 +1,253 @@
+[gd_scene load_steps=22 format=3 uid="uid://bqk7yr4i70rvt"]
+
+[ext_resource type="Script" path="res://Scene/Curtain/curtain_layer.gd" id="1_t51ao"]
+[ext_resource type="Texture2D" uid="uid://bnmwygeaaeg65" path="res://Assets/Art/2D/Role/Doll/AkiRoll.png" id="2_qrxri"]
+
+[sub_resource type="Animation" id="Animation_bw6sl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurtainColorRect:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CurtainColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7yl46"]
+resource_name = "curtain fade in"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurtainColorRect:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CurtainColorRect:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ftu61"]
+resource_name = "curtain fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurtainColorRect:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CurtainColorRect:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m34pl"]
+_data = {
+&"RESET": SubResource("Animation_bw6sl"),
+&"curtain fade in": SubResource("Animation_7yl46"),
+&"curtain fade out": SubResource("Animation_ftu61")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7vw4"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(0, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq44m"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(39, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnc8r"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(78, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4c1t"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(117, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pspbc"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(156, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de8dw"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(195, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evy7a"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(234, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xagdm"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(273, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u55d6"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(312, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2gfq"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(351, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du62g"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(390, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tpeq"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(429, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7v7j"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(468, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlb0y"]
+atlas = ExtResource("2_qrxri")
+region = Rect2(507, 0, 39, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eqv88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7vw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq44m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnc8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4c1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pspbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de8dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evy7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xagdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u55d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2gfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du62g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tpeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7v7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlb0y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CurtainLayer" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_t51ao")
+tips = Array[String](["会有人拿裹尸袋当睡袋吗", "一些遗物在你获得前置遗物前是不会出现的", "终点站一般都是只连接了一条路的废墟，而且需要付费才能通过"])
+
+[node name="CurtainAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m34pl")
+}
+
+[node name="CurtainColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CurtainTipLabel" type="Label" parent="CurtainColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "当前站
+城市"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmallTipLabel" type="Label" parent="CurtainColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -88.0
+offset_right = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "1212"
+
+[node name="Aki" type="AnimatedSprite2D" parent="CurtainColorRect"]
+position = Vector2(1717, 858)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_eqv88")
+autoplay = "default"
+frame_progress = 0.292152

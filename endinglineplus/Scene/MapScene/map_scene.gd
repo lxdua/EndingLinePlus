@@ -1,4 +1,5 @@
 extends Node2D
+class_name MapScene
 
 @onready var time_manager: TimeManager = get_tree().get_first_node_in_group("TimeManager")
 @onready var game_stats_manager: GameStatsManager = get_tree().get_first_node_in_group("GameStatsManager")

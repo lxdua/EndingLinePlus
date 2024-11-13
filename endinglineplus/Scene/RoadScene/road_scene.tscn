@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://by2i5h22hjvld"]
+[gd_scene load_steps=3 format=3 uid="uid://by2i5h22hjvld"]
 
 [ext_resource type="Script" path="res://Scene/RoadScene/road_scene.gd" id="1_5ujeh"]
+[ext_resource type="MeshLibrary" uid="uid://cwa22ovbpg3g4" path="res://Assets/GridMap/Rail.tres" id="2_m5mfj"]
 
 [node name="RoadScene" type="Node3D"]
 script = ExtResource("1_5ujeh")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_m5mfj")
+cell_size = Vector3(2, 1, 2)
+data = {
+"cells": PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 655360, 65535, 0, 655360, 65533, 0, 655360, 65534, 0, 655360)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)

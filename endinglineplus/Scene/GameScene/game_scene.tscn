@@ -1,24 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://bw06qaden1lma"]
+[gd_scene load_steps=14 format=3 uid="uid://bw06qaden1lma"]
 
 [ext_resource type="Script" path="res://Scene/GameScene/game_scene.gd" id="1_pm2eq"]
-[ext_resource type="Script" path="res://Scene/GameScene/game_stats_manager.gd" id="2_0lydc"]
+[ext_resource type="Script" path="res://Scene/GameScene/Manager/game_stats_manager.gd" id="2_0lydc"]
 [ext_resource type="PackedScene" uid="uid://0imr6fms1c6l" path="res://Scene/SecondaryScene/FitmentUI/fitment_ui.tscn" id="2_2fomd"]
 [ext_resource type="PackedScene" uid="uid://bj24kn7idqb11" path="res://Scene/MapScene/map_scene.tscn" id="2_eir1k"]
 [ext_resource type="PackedScene" uid="uid://0cnbo6xemiqv" path="res://Scene/StationScene/station_scene.tscn" id="2_p3f44"]
 [ext_resource type="PackedScene" uid="uid://beprng20aiv1i" path="res://Scene/MapScene/map_scene_ui.tscn" id="2_pe6uu"]
-[ext_resource type="Script" path="res://Scene/GameScene/fitment_manager.gd" id="3_1rrrp"]
+[ext_resource type="Script" path="res://Scene/GameScene/Manager/fitment_manager.gd" id="3_1rrrp"]
 [ext_resource type="PackedScene" uid="uid://clq1l3x3cony4" path="res://Scene/SecondaryScene/TrainStatsUI/train_stats_ui.tscn" id="3_bn7k2"]
 [ext_resource type="PackedScene" uid="uid://by2i5h22hjvld" path="res://Scene/RoadScene/road_scene.tscn" id="3_n7a2g"]
-[ext_resource type="Script" path="res://Scene/GameScene/buff_manager.gd" id="4_nxf0k"]
+[ext_resource type="PackedScene" uid="uid://3gug44gim84w" path="res://Scene/GameScene/UI/UnderButtonUI/under_button_ui.tscn" id="4_n4js3"]
+[ext_resource type="Script" path="res://Scene/GameScene/Manager/buff_manager.gd" id="4_nxf0k"]
 [ext_resource type="Script" path="res://Class/Modifier/modifier_handler.gd" id="5_sb0gp"]
-[ext_resource type="Script" path="res://Scene/GameScene/time_manager.gd" id="6_0enhb"]
+[ext_resource type="Script" path="res://Scene/GameScene/Manager/time_manager.gd" id="6_0enhb"]
 
-[node name="GameScene" type="Node" node_paths=PackedStringArray("scene_layer", "ui_layer", "map_layer", "secondary_ui_layer")]
+[node name="GameScene" type="Node"]
 script = ExtResource("1_pm2eq")
-scene_layer = NodePath("SceneLayer")
-ui_layer = NodePath("UILayer")
-map_layer = NodePath("MapLayer")
-secondary_ui_layer = NodePath("SecondaryUILayer")
 
 [node name="SceneLayer" type="CanvasLayer" parent="."]
 
@@ -29,6 +26,8 @@ secondary_ui_layer = NodePath("SecondaryUILayer")
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 2
 
+[node name="UnderButtonUI" parent="UILayer" instance=ExtResource("4_n4js3")]
+
 [node name="MapLayer" type="CanvasLayer" parent="."]
 layer = 3
 follow_viewport_enabled = true
@@ -38,13 +37,11 @@ follow_viewport_enabled = true
 [node name="SecondaryUILayer" type="CanvasLayer" parent="."]
 layer = 4
 
+[node name="MapSceneUI" parent="SecondaryUILayer" instance=ExtResource("2_pe6uu")]
+
 [node name="FitmentUI" parent="SecondaryUILayer" instance=ExtResource("2_2fomd")]
-visible = false
 
 [node name="TrainStatsUI" parent="SecondaryUILayer" instance=ExtResource("3_bn7k2")]
-visible = false
-
-[node name="MapSceneUI" parent="SecondaryUILayer" instance=ExtResource("2_pe6uu")]
 
 [node name="GameStatsManager" type="Node" parent="." groups=["GameStatsManager"]]
 script = ExtResource("2_0lydc")
@@ -61,5 +58,12 @@ script = ExtResource("5_sb0gp")
 [node name="TimeManager" type="Node" parent="." groups=["TimeManager"]]
 script = ExtResource("6_0enhb")
 
+[connection signal="cargo_button_pressed" from="UILayer/UnderButtonUI" to="." method="_on_under_button_ui_cargo_button_pressed"]
+[connection signal="fitment_button_pressed" from="UILayer/UnderButtonUI" to="." method="_on_under_button_ui_fitment_button_pressed"]
+[connection signal="health_button_pressed" from="UILayer/UnderButtonUI" to="." method="_on_under_button_ui_health_button_pressed"]
+[connection signal="map_button_pressed" from="UILayer/UnderButtonUI" to="." method="_on_under_button_ui_map_button_pressed"]
+[connection signal="price_button_pressed" from="UILayer/UnderButtonUI" to="." method="_on_under_button_ui_price_button_pressed"]
+[connection signal="arrive" from="MapLayer/MapScene" to="." method="_on_map_scene_arrive"]
 [connection signal="destination_id_update" from="MapLayer/MapScene" to="SecondaryUILayer/MapSceneUI" method="_on_map_scene_destination_id_update"]
+[connection signal="set_out" from="MapLayer/MapScene" to="." method="_on_map_scene_set_out"]
 [connection signal="set_out_button_pressed" from="SecondaryUILayer/MapSceneUI" to="MapLayer/MapScene" method="_on_map_scene_ui_set_out_button_pressed"]

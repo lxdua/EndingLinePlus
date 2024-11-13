@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj24kn7idqb11"]
 
 [ext_resource type="Script" path="res://Scene/MapScene/map_scene.gd" id="1_gc1dx"]
-[ext_resource type="Texture2D" uid="uid://cy7wku8wmmbs7" path="res://Assets/Art/MapScene/MapBG.png" id="2_30bbn"]
+[ext_resource type="Texture2D" uid="uid://cy7wku8wmmbs7" path="res://Assets/Art/2D/MapScene/MapBG.png" id="2_30bbn"]
 [ext_resource type="PackedScene" uid="uid://bgpt246vb6uwl" path="res://Resource/Map/地图2.tscn" id="3_obxyp"]
 [ext_resource type="PackedScene" uid="uid://d0p21ru34ipl2" path="res://Scene/MapScene/TrainOnMap/train_on_map.tscn" id="3_oncd3"]
 
